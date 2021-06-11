@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- SpringBean 的作用域 -->
+    <!-- SpringBean的作用域 -->
     <bean id="user" class="cn.wn.entity.User" scope="prototype">
         <property name="id" value="1"></property>
         <property name="name" value="张3"></property>
