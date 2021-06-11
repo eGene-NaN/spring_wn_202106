@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- SpringBean 的作用域 -->
+    <bean id="user" class="cn.wn.entity.User" scope="prototype">
+        <property name="id" value="1"></property>
+        <property name="name" value="张3"></property>
+    </bean>
+
+    <!-- SpringBean的继承 -->
+    <bean id="user1" class="cn.wn.entity.User" scope="singleton">
+        <property name="id" value="2"></property>
+        <property name="name" value="李四"></property>
+    </bean>
+
+    <bean id="user2" class="cn.wn.entity.User" parent="user1">
+        <property name="name" value="王五"></property>
+    </bean>
+
+    <bean id="account" class="cn.wn.entity.Account" parent="user1">
+<!--        <property name="id" value="6"></property>-->
+<!--        <property name="name" value="赵六"></property>-->
+    </bean>
+
+
+</beans>

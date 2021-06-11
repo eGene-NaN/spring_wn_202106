@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- IoC DI 是指bean之间的依赖注入，设置对象间的级联关系 -->
+
+    <!-- Classes -->
+    <bean id="classes" class="cn.wn.entity.Classes">
+        <property name="id" value="100"></property>
+        <!--        <property name="name" value="一班"></property>-->
+        <!-- value中特殊字符处理需要使用到<![CDATA[]]> -->
+        <property name="name">
+            <value><![CDATA[<一班>]]></value>
+        </property>
+        <property name="studentList">
+            <list>
+                <ref bean="student1"></ref>
+                <ref bean="student2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Student -->
+    <!--<bean id="student" class="cn.wn.entity.Student">
+        <property name="id" value="1"></property>
+        <property name="name" value="小明"></property>
+        <property name="age" value="22"></property>
+        <property name="classes" ref="classes"></property>
+    </bean>-->
+    <bean id="student1" class="cn.wn.entity.Student">
+        <property name="id" value="1"></property>
+        <property name="name" value="小明"></property>
+        <property name="age" value="22"></property>
+    </bean>
+    <bean id="student2" class="cn.wn.entity.Student">
+        <property name="id" value="1"></property>
+        <property name="name" value="小强"></property>
+        <property name="age" value="23"></property>
+    </bean>
+
+</beans>
