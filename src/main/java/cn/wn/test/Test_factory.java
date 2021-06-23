@@ -20,9 +20,15 @@ public class Test_factory {
 //        System.out.println("car1 = " + car1);
 
         // 通过静态工厂方法IoC容器
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-factory.xml");
-        Car car1 = (Car) applicationContext.getBean("car1");
-        System.out.println("car1 = " + car1);
+//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-factory.xml");
+//        Car car1 = (Car) applicationContext.getBean("car1");
+//        System.out.println("car1 = " + car1);
+
+        // 通过实例工厂获取Car
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-factory.xml");
+        Car car2 = (Car) applicationContext.getBean("car2");
+        System.out.println("car2 = " + car2);
+
 
     }
 }

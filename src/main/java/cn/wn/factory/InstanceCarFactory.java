@@ -7,21 +7,20 @@ import java.util.Map;
 
 /**
  * @author eGene
- * @date 2021/06/11
- * @description 静态工厂类
+ * @date 2021/06/21
+ * @description 实例工厂类
  */
-public class StaticCarFactory {
+public class InstanceCarFactory {
 
-    private static Map<Integer, Car> carMap;
+    private Map<Integer, Car> carMap;
 
-    static {
+    public InstanceCarFactory() {
         carMap = new HashMap<>();
         carMap.put(1, new Car(1, "宝马"));
         carMap.put(2, new Car(2, "奥迪"));
     }
 
-    public static Car getCar(Integer num) {
+    public Car getCar(Integer num) {
         return carMap.get(num);
     }
-
 }

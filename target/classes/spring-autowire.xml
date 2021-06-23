@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 自动装载有两项方式 [autowire="byName"]、[autowire="byType"] -->
+    <bean id="person" class="cn.wn.entity.Person" autowire="byName">
+        <property name="id" value="1"></property>
+        <property name="name" value="王2小"></property>
+    </bean>
+
+    <bean id="car" class="cn.wn.entity.Car">
+        <constructor-arg name="num" value="1"></constructor-arg>
+        <constructor-arg name="brand" value="Audi"></constructor-arg>
+    </bean>
+
+</beans>
